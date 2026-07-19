@@ -43,14 +43,20 @@ def add_characters():
 def add_chats():
     print(f"Adding Chats")
     chat_id_001 = "400"
-    chat_1 = ChatModel(id=chat_id_001, user="100", character="200", chat_thing="thing one")
+    chat_1 = ChatModel(id=chat_id_001, user_id="100", character_id="200", chat_thing="thing one")
 
-    chat_id_001 = "401"
-    chat_2 = ChatModel(id=chat_id_001, user="100", character="200", chat_thing="thing two")
+    chat_id_002 = "401"
+    chat_2 = ChatModel(id=chat_id_002, user_id="100", character_id="201", chat_thing="thing two")
 
+    chat_id_003 = "402"
+    chat_3 = ChatModel(id=chat_id_003, user_id="100", character_id="201", chat_thing="thing three")
+
+
+    chat_id_004 = "403"
+    chat_4 = ChatModel(id=chat_id_004, user_id="101", character_id="202", chat_thing="thing four")
 
     with Session(engine) as session:
-        session.add_all([chat_1,chat_2])
+        session.add_all([chat_1,chat_2,chat_3,chat_4])
         session.commit()
 
 
